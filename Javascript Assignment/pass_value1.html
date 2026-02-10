@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passing Values from one to another without forms</title>
+  </head>
+  <body>
+    <div id="mainbutton">
+      <h1 style="color: brown;">PASSING VALUES FROM ONE PAGE TO ANOTHER WITHOUT FORMS</h1>
+      <h3>CLICK THE BELOW BUTTON TO ADD NAME</h3>
+      <br /><hr>
+      <button onclick="addname()">Click Here</button>
+    </div>
+    <script>
+      function addname() {
+        var name = prompt("Enter your name : ");
+        if (name) {
+          localStorage.setItem('userName', name);
+          window.location.href = 'pass_value2.html';
+        }
+      }
+    </script>
+  </body>
+</html>

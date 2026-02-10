@@ -1,0 +1,9 @@
+{
+  "Asia": ["India", "China", "Japan", "Pakistan", "Nepal"],
+  "Africa": ["Nigeria", "Egypt", "Kenya", "South Africa", "Ethiopia"],
+  "NorthAmerica": ["USA", "Canada", "Mexico", "Cuba"],
+  "SouthAmerica": ["Brazil", "Argentina", "Chile", "Peru"],
+  "Antarctica": ["No permanent countries"],
+  "Europe": ["Germany", "France", "Italy", "Spain", "UK"],
+  "Australia": ["Australia", "New Zealand"]
+}

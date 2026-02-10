@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LEARNING AJAX</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  </style>
+  <body>
+    <h1>LEARNING AJAX BASICS</h1>
+    <br />
+    <button type="button" id="fetch" class="btn btn-success">Fetch</button>
+    <button type="button" id="backup " class="btn btn-danger">Backup</button>
+
+    <script>
+      let fetch= document.getElementById("fetch");
+      fetch.addEventListner("click",fetchhandler);
+      function fetchhandler(){
+          console.log("you clicked on fetch button")
+
+      const xhr=new XMLHttpRequest();
+      xhr.open("GET",ajax_info.txt,true)
+      }
+    </script>
+  </body>
+</html>

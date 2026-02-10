@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEARCH IMAGE FROM LIST</title>
+
+    <style>
+      body {
+        background-color: rgb(0, 138, 173);
+        margin: 20px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        width: 100%;
+      }
+
+      table {
+        background-color: white;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px 16px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .search {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .search input {
+        padding: 6px;
+      }
+
+      .search button {
+        padding: 6px;
+        cursor: pointer;
+      }
+
+      .result {
+        background-color: rgb(51, 255, 0);
+        padding: 5px;
+        width: fit-content;
+      }
+
+      .img {
+        border: 5px solid white;
+        padding: 30px;
+        margin: 30px auto;
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+      }
+
+      .img img {
+        width: 180px;
+        height: 189px;
+        background-color: rgb(51, 255, 0);
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <table>
+        <tr>
+          <th>LIST OF PICTURES</th>
+        </tr>
+        <tr>
+          <td>Swans</td>
+        </tr>
+        <tr>
+          <td>Swans 1</td>
+        </tr>
+        <tr>
+          <td>Swans 2</td>
+        </tr>
+        <tr>
+          <td>Bridge</td>
+        </tr>
+        <tr>
+          <td>Balloon</td>
+        </tr>
+        <tr>
+          <td>Horses</td>
+        </tr>
+      </table>
+
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <button>Search</button>
+        <span class="result"></span>
+      </div>
+    </div>
+
+    <div class="img">
+      <img src="" alt="" />
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+  <script>
+    const images = {
+  swans: "../media/swans.png",
+  "swans 1": "../media/swans1.png",
+  "swans 2": "../media/swans2.png",
+  bridge: "../media/pic1.jpg",
+  balloon: "../media/pic6.jpg",
+  horses: "../media/pic4.jpg",
+};
+
+$(document).ready(function () {
+  $("button").click(function () {
+    let searchText = $("#searchInput").val().toLowerCase().trim();
+    let found = false;
+    $("td").css("background-color", "white");
+    $("table tr td").each(function () {
+      let tablerowText = $(this).text().toLowerCase();
+
+      if (tablerowText === searchText) {
+        found = true;
+      }
+    });
+
+    if (found ) {
+      $(".result").text("present").css("background-color", "rgb(51, 255, 0)");
+      $(".img img").attr("src", images[searchText]).attr("alt", searchText);
+    } else {
+      $(".result").text("not present").css("background-color", "red");
+      $(".img img").attr("src", "").attr("alt", "NOT FOUND").css("background-color", "red");
+    }
+  });
+});
+
+  </script>
+  </body>
+</html>

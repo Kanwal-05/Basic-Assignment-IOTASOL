@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="title" style="display: flex; justify-content: center;"><h1>...SWANS...</h1></div>
+  <div id="image" style="display: flex; background-color: antiquewhite; padding: 20px;margin: 20px;justify-content: center; border: 2px black; border-radius: 20px; margin-top: 0px ;margin-bottom: 0px;">
+<img id="nextimage" src="../Media/swans.png" alt="LOADING............" >
+  </div>
+<br>
+<div class="btn" style="display: flex; justify-content: center;"><button onclick="nextpic()">NEXT IMAGE</button></div>
+
+
+<script>
+        
+        const images = [
+            "../Media/swans.png",
+            "../Media/swans1.png",
+            "../Media/swans2.png"
+        ];
+
+        let index = 0; 
+        const imgElement = document.getElementById("nextimage");
+
+        
+         function nextpic() {
+        
+             index = (index + 1) % images.length; 
+             imgElement.src = images[index];
+         }
+        
+    </script>
+
+</body>
+</html>

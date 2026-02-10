@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Account Page</title>
+  </head>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      background-color: lightgray;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .navbar {
+      display: flex;
+      padding: 10px;
+      background-color: white;
+    }
+    .nav_items {
+      display: flex;
+      font-family: Arial, Helvetica, sans-serif;
+      align-items: center;
+      width: 40%;
+      justify-self: center;
+      gap: 30px;
+      color: grey;
+      padding-left: 100px;
+      cursor: pointer;
+    }
+    .logo{
+      display: flex;
+      width: 50%;
+    }
+    .tweet {
+      background-color: rgb(84, 173, 208);
+      padding: 4px;
+      border-radius: 20px;
+      padding-right: 15px;
+      padding-left: 15px;
+      border: 0px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .maincontainer {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      max-width: 1190px;
+    }
+    .container1 {
+      background-color: white;
+      width: 290px;
+      height: 250px;
+    }
+    .container2 {
+      background-color: white;
+      width: 350px;
+      height: 350px;
+      padding: 5px;
+    }
+    .container3 {
+      background-color: white;
+      width: 290px;
+      height: 250px;
+      padding: 5px;
+    }
+    .container3_txt {
+      padding: 20px;
+    }
+    .pic_btn {
+      padding-left: 20px;
+      display: flex;
+    }
+    img {
+      border-radius: 50%;
+    }
+    .cont2 {
+      display: flex;
+      padding-left: 20px;
+    }
+    .texts {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    u {
+      display: flex;
+      padding-left: 50%;
+      padding-top: 10px;
+      height: 80px;
+    }
+  </style>
+  <body>
+    <div class="navbar">
+      <div class="nav_items">
+        <span class="elem_1">Home</span>
+        <span class="elem_2">Moment</span>
+        <span class="elem_3">Notification</span>
+        <span class="elem_3">Message</span>
+      </div>
+      <div class="logo">
+        <img
+          src="../Media/twitter.png"
+          alt="Loading"
+          width="20px"
+          height="20px"
+        />
+      </div>
+      <div class="btn"><button class="tweet">Tweet</button></div>
+    </div>
+
+    <div class="maincontainer">
+      <div class="container1">
+        <div
+          class="black_cont"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background-color: black;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          Ratatouille
+        </div>
+        <div class="cont1_img">
+          <img
+            src="../Media/mouse.jpg"
+            alt="Loading"
+            width="60px"
+            height="60px"
+            style="
+              border: 4px solid rgb(255, 255, 255);
+              margin-left: 20px;
+              position: absolute;
+              top: 130px;
+              left: 140px;
+            "
+          />
+        </div>
+        <div class="mouse_id" style="width: 100%">
+          <u>Remy</u>
+        </div>
+        <div
+          class="followers"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: grey;
+          "
+        >
+          <span>Tweets</span>
+          <span>Following</span>
+          <span>Followers</span>
+        </div>
+        <div
+          class="followers"
+          style="
+            display: flex;
+            justify-content:space-evenly;
+            color: rgb(84, 173, 208);
+            font-weight: bold;
+            font-size: 15px;
+          "
+        >
+          <span>5049</span>
+          <span>324</span>
+          <span>849</span>
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="cont2">
+          <img
+            src="../Media/mouse.jpg"
+            alt="Loading"
+            width="50px"
+            height="50px"
+          />
+          <div class="name_txt">
+            <div class="text" style="display: flex">
+              <b>Remy</b>
+              <div
+                class="short"
+                style="font-size: 15px; margin-left: 5px; color: grey"
+              >
+                @remy Nov 19
+              </div>
+              <br />
+            </div>
+            <div class="texts">
+              I'm taking this class called CS1320 and the TAs are all so cool!
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="cont2">
+          <img
+            src="../Media/mouse.jpg"
+            alt="Loading"
+            width="50px"
+            height="50px"
+          />
+          <div class="name_txt">
+            <div class="text" style="display: flex">
+              <b>Remy</b>
+              <div
+                class="short"
+                style="font-size: 15px; margin-left: 5px; color: grey"
+              >
+                @remy Nov 19
+              </div>
+              <br />
+            </div>
+            <div class="texts">
+              It's 2007. You just got home from elementry school. Your mom has
+              pizza bahels in the oven. Ratatouille is in theaters. life is good
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="cont2">
+          <img
+            src="../Media/mouse.jpg"
+            alt="Loading"
+            width="50px"
+            height="50px"
+          />
+          <div class="name_txt">
+            <div class="text" style="display: flex">
+              <b>Remy</b>
+              <div
+                class="short"
+                style="font-size: 15px; margin-left: 5px; color: grey"
+              >
+                @remy Nov 19
+              </div>
+              <br />
+            </div>
+            <div class="texts">Let's make some pasta !</div>
+          </div>
+        </div>
+        <hr />
+        <div class="cont2">
+          <img
+            src="../Media/mouse.jpg"
+            alt="Loading"
+            width="50px"
+            height="50px"
+          />
+          <div class="name_txt">
+            <div class="text" style="display: flex">
+              <b>Remy</b>
+              <div
+                class="short"
+                style="font-size: 15px; margin-left: 5px; color: grey"
+              >
+                @remy Nov 19
+              </div>
+              <br />
+            </div>
+            <div class="texts">Let's make some pasta !</div>
+          </div>
+        </div>
+        <hr />
+        <div class="cont2">
+          <img
+            src="../Media/mouse.jpg"
+            alt="Loading"
+            width="50px"
+            height="50px"
+          />
+          <div class="name_txt">
+            <div class="text" style="display: flex">
+              <b>Remy</b>
+              <div
+                class="short"
+                style="font-size: 15px; margin-left: 5px; color: grey"
+              >
+                @remy Nov 19
+              </div>
+              <br />
+            </div>
+            <div class="texts">Let's make some pasta !</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="container3_txt"><b> Who To Follow </b></div>
+        <div class="pic_btn">
+          <img
+            src="../Media/ratatouille_person.jpg"
+            alt="loading"
+            width="50px"
+            height="50px"
+          />
+          <div class="text_btn">
+            <div class="text" style="display: flex">
+              <b>Linguini</b>
+              <div
+                class="short"
+                style="font-size: 15px; margin-left: 5px; color: grey"
+              >
+                @linguini
+              </div>
+            </div>
+            <br />
+            <span
+              ><button
+                class="follow"
+                style="
+                  margin-left: 20px;
+                  background-color: white;
+                  padding: 4px;
+                  border-radius: 20px;
+                  padding-right: 15px;
+                  padding-left: 15px;
+                  border: 0px;
+                  color: rgb(84, 173, 208);
+                  cursor: pointer;
+                  border: 1px solid rgb(84, 173, 208);
+                "
+              >
+                Follow
+              </button></span
+            >
+          </div>
+        </div>
+        <hr />
+        <div class="pic_btn">
+          <img
+            src="../Media/mouse.jpg"
+            alt="loading"
+            width="50px"
+            height="50px"
+          />
+          <div class="text_btn">
+            <div class="text" style="display: flex">
+              <b>CS1320 TA</b>
+              <div
+                class="short"
+                style="font-size: 15px; margin-left: 5px; color: grey"
+              >
+                @cs 1320ta
+              </div>
+            </div>
+            <br />
+            <span
+              ><button
+                class="follow"
+                style="
+                  margin-left: 20px;
+                  background-color: white;
+                  padding: 4px;
+                  border-radius: 20px;
+                  padding-right: 15px;
+                  padding-left: 15px;
+                  border: 0px;
+                  color: rgb(84, 173, 208);
+                  cursor: pointer;
+                  border: 1px solid rgb(84, 173, 208);
+                "
+              >
+                Follow
+              </button></span
+            >
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>

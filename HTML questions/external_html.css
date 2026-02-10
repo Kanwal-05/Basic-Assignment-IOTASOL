@@ -1,0 +1,10 @@
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1:hover{
+    background-color: black;
+    color: aqua;
+    padding: 20px;
+}

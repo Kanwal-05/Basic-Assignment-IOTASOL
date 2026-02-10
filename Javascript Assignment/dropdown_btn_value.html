@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DROPDOWN VALUE CHECKER</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    .dropdown {
+      background-color: rgb(0, 89, 89);
+      padding: 20px;
+      border-radius: 25px;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div
+      class="heading"
+      style="background-color: rgb(0, 89, 89); border-radius: 25px"
+    >
+      <h1 style="display: flex; justify-content: center; color: white">
+        DROPDOWN VALUE CHECKER
+      </h1>
+    </div>
+    <div class="dropdown">
+      <label for="dropdown" style="color: white; font-size: 20px"
+        >PLEASE CHOOSE A FRUIT
+      </label>
+      <br />
+      <hr />
+      
+      <select name="fruit" id="fruit" style="border-radius: 10px">
+        <option value="">--Select a fruit--</option>
+        <option value="APPLE">APPLE</option>
+        <option value="MANGO">MANGO</option>
+        <option value="BANANA">BANANA</option>
+        <option value="GUAVA">GUAVA</option>
+        <option value="PINEAPPLE">PPINEAPPLE</option>
+        <option value="STRAWBERRY">STRAWBERRY</option>
+        <option value="ORANGE">ORANGE</option>
+        <option value="BLACKBERRY">BLACKBERRY</option>
+        <option value="KIWI">KIWI</option>
+        <option value="LICHI">LICHI</option>
+        <option value="TADMARINE">TADMARINE</option>
+      </select>
+    </div>
+
+    <div
+      class="btn"
+      style="
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      "
+    >
+      <button onclick="submit()" style="margin-top: 20px; padding: 5px">
+        SUBMIT
+      </button>
+    </div>
+    <hr />
+    <div
+      class="result"
+      style="
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        font-size: larger;
+        color: rgb(0, 89, 89);
+      "
+    ></div>
+
+    <script>
+      function submit() {
+        var selected = document.getElementById("fruit").value;
+        document.querySelector(".result").innerHTML = "FRUIT IS : " + selected;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries Selection According To Continents</title>
+</head>
+<style></style>
+
+<body>
+    <div class="head">
+        <h1>SELECT CONTINENT</h1>
+        <select name="Continent" id="Continent">
+            <option value="Asia">Asia</option>
+            <option value="Africa">Africa</option>
+            <option value="NorthAmerica">North America</option>
+            <option value="SouthAmerica">South America</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Europe">Europe</option>
+            <option value="Australia">Australia</option>
+        </Select>
+    </div>
+    <hr>
+    <div class="result">
+        <h2>Countries According to Upper Continent</h2>
+        <select name="result" id="result"></select>
+    </div>
+
+    <script>
+        let continent = document.getElementById("Continent")
+        let result = document.getElementById("result")
+
+        continent.addEventListener("change", function () {
+            const selectedContinent = this.value;
+            result.innerHTML = "";
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "countries.json", true)
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status == 200);
+                const data = JSON.parse(this.responseText);
+                const countries = data[selectedContinent]
+
+                countries.forEach(country => {
+                    const option = document.createElement("option");
+                    option.textContent = country;
+                    result.append(option)
+                });
+            }
+            xhr.send()
+        })
+    </script>
+   
+
+</body>
+
+</html>
+

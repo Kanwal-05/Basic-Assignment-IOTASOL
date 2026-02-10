@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Google Like Search using AJAX</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        justify-content: center;
+        margin-top: 50px;
+      }
+    .logo{
+        display: flex;
+        justify-content: center;
+    }
+      .search-box {
+        width: 400px;
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+        width: 90%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      li {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+      }
+
+      li:hover {
+        background: #f0f0f0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="../Media/Google-Logo-700x394.png" alt="Loading" width="200px" />
+    </div>
+    <div class="search-box">
+      
+        <input type="text" id="search" placeholder="Search like Google..."  >
+      
+      <ul id="results"></ul>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById("search");
+      const resultsBox = document.getElementById("results");
+
+      searchInput.addEventListener("keyup", function () {
+        let query = searchInput.value;
+
+        if (query.length < 1) {
+          resultsBox.innerHTML = "";
+          return;
+        }
+
+        let url = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${query}&format=json&origin=*`;
+
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            let suggestions = data[1];
+            resultsBox.innerHTML = "";
+
+            suggestions.forEach((item) => {
+              let li = document.createElement("li");
+              li.textContent = item;
+              resultsBox.appendChild(li);
+            });
+          });
+      });
+    </script>
+  </body>
+</html>
+

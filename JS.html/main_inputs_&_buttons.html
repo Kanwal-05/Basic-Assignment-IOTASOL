@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 2px;
+      box-sizing: border-box;
+    }
+    #rowsContainer {
+      padding: 20px;
+    }
+    table {
+      border: 2px solid black;
+    }
+    .btn {
+      padding: 20px;
+    }
+    .result {
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <div id="rowsContainer">
+      <table id="tableBody">
+        <tbody>
+          <tr class="datarow">
+            <td>
+              <select class="gender">
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+
+            <td>
+              <label for="checkbox">Check Box </label>
+              <input type="checkbox" class="check" />
+            </td>
+
+            <td>
+              RD1 <input type="radio" class="radio" value="RD1" /> RD2
+              <input type="radio" class="radio" value="RD2" /> RD3
+              <input type="radio" class="radio" value="RD3" />
+            </td>
+
+            <td>
+              <input type="text" class="textbox" />
+            </td>
+
+            <td>
+              <textarea class="row-textarea"></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="btn">
+      <button onclick="insertRow()">INSERT ROW</button>
+      <button onclick="refresh()">REFRESH</button>
+      <button onclick="savedata()">SAVE AS</button>
+      <button onclick="populate()">POPULATE</button>
+    </div>
+    <div class="result">
+      <textarea id="savedData" style="padding:0.375rem 0.75rem; width: 70%;"></textarea>
+    </div>
+
+    <script>
+      function insertRow() {
+        var tbody = document.getElementById("tableBody");
+        var newRow = document.createElement("tr");
+        newRow.className = "datarow";
+
+
+        newRow.innerHTML = `
+                <td>
+              <select class="gender">
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+
+            <td>
+              <label for="checkbox">Check Box </label>
+              <input type="checkbox" class="check" />
+            </td>
+
+            <td>
+              RD1 <input type="radio" class="radio" value="RD1" /> RD2
+              <input type="radio" class="radio" value="RD2" /> RD3
+              <input type="radio" class="radio" value="RD3" />
+            </td>
+
+            <td>
+              <input type="text" class="textbox" />
+            </td>
+
+            <td>
+              <textarea class="row-textarea"></textarea>
+            </td>
+  `;
+
+        tbody.appendChild(newRow);
+      }
+    </script>
+    <script>
+      function refresh() {
+        window.location.reload();
+      }
+    </script>
+
+    <script>
+      function savedata() {
+        var outputBox = document.getElementById("savedData");
+        var rows = document.getElementsByClassName("datarow");
+        var finalString = "";
+
+        for (var i = 0; i < rows.length; i++) {
+          var row = rows[i];
+
+          var gender = row.querySelector(".gender").value;
+          var checkbox = row.querySelector(".check").checked ? "True" : "False";
+
+          var radios = row.querySelectorAll(".radio");
+          var radioValue = "";
+
+          for (var r = 0; r < radios.length; r++) {
+            if (radios[r].checked) {
+              radioValue = radios[r].value;
+            }
+          }
+
+          var textValue = row.querySelector(".textbox").value;
+          var textareaValue = row.querySelector(".row-textarea").value;
+
+          finalString +=
+            gender +
+            " <OOOO> " +
+            checkbox +
+            " <OOOO> " +
+            radioValue +
+            " <OOOO> " +
+            textValue +
+            " <OOOO> " +
+            textareaValue +
+            "\n";
+        }
+
+        outputBox.value = outputBox.value + finalString;
+      }
+
+      
+    </script>
+    <script>
+      function populate(){
+        var outputBox = document.getElementById("savedData");
+        outputBox.appendChild(savedata())
+      }
+    </script>
+  </body>
+</html>

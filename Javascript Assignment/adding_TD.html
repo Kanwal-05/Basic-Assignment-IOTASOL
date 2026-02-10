@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <body>
+    <table
+      style="padding: 20px; border: 2px dashed black; background-color: bisque"
+    >
+      <tr id="row">
+        <td>Cell 1</td>
+      </tr>
+    </table>
+
+    <button onclick="addCell()" style="margin-top: 20px; border-radius: 20px">
+      ADD NEW CELL
+    </button>
+
+    <script>
+      function addCell() {
+        let td = document.createElement("td");
+        td.innerText = "New Cell";
+        document.getElementById("row").appendChild(td);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pagination using jQuery</title>
+  </head>
+
+  <style>
+    body {
+      margin: 0%;
+      padding: 20px;
+    }
+    table {
+      width: 60%;
+    }
+    th,
+    td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .pagination {
+      padding: 80px;
+    }
+  </style>
+
+  <body>
+    <table id="my_Table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Kanwal 1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Kanwal 2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Kanwal 3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Kanwal 4</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Kanwal 5</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Kanwal 6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Kanwal 7</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Kanwal 8</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Kanwal 9</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button id="previous">PREVIOUS PAGE</button>
+      <button id="next">NEXT PAGE</button>
+      <br>
+      <br>
+      <span id="page_number"></span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var rowsPerPage = 2;
+        var rows = $("#my_Table tbody tr");
+        var totalRows = rows.length;
+        var totalPages = Math.ceil(totalRows / rowsPerPage);
+        var currentPage=1;
+
+        function showthepage(page) {
+          rows.hide();
+          var start = (page - 1) * rowsPerPage;
+          var end = start + rowsPerPage;
+          rows.slice(start, end).show();
+          $("#page_number").text("Page " + page + " of " + totalPages);
+        }
+        $("#previous").click(function () {
+          if (currentPage > 1) {
+            currentPage--;
+            showthepage(currentPage);
+          }
+        });
+        $("#next").click(function () {
+          if (currentPage < totalPages) {
+            currentPage++;
+            showthepage(currentPage);
+          }
+        });
+        showthepage(currentPage);
+      });
+    </script>
+  </body>
+</html>

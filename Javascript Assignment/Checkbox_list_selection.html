@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHECKBOXES SELECTION</title>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>CHECKBOXES SELECTION</h1>
+      <br />
+      <h2>FAVOURITE HOBBY</h2>
+    </div>
+    <div id="boxes">
+      <input type="checkbox" id="selectAllCheckbox" />
+      <span id="textchange"></span>
+    </div>
+    <hr />
+    <div class="options_box">
+      <input type="checkbox" class="checkboxes" />
+      TRAVELLING
+      <input type="checkbox" class="checkboxes" />
+      INDOOR PLAYING
+      <input type="checkbox" class="checkboxes" />
+      OUTDOOR PLAYING
+      <input type="checkbox" class="checkboxes" />
+      VLOGGING
+    </div>
+    <script>
+      document
+        .getElementById("selectAllCheckbox")
+        .addEventListener("change", function () {
+          let checkboxes = document.querySelectorAll(".checkboxes");
+          let resultDiv = document.getElementById("textchange");
+          checkboxes.forEach(function (checkbox) {
+            checkbox.checked = this.checked;
+            if (this.checked) {
+              resultDiv.textContent = "UN-SELECT ALL";
+            } else {
+              resultDiv.textContent = "SELECT ALL";
+            }
+          }, this);
+        });
+    </script>
+  </body>
+</html> 

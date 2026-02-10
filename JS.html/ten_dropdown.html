@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+  
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+
+<select onchange="disableOptions()">
+  <option value="">Select</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+<script>
+function disableOptions() {
+  var allSelects = document.getElementsByTagName("select");
+  var usedValues = [];
+
+
+  for (var i = 0; i < allSelects.length; i++) {
+    if (allSelects[i].value != "") {
+      usedValues.push(allSelects[i].value);
+    }
+  }
+
+  for (var s = 0; s < allSelects.length; s++) {
+    var opts = allSelects[s].options;
+
+    for (var o = 0; o < opts.length; o++) {
+      opts[o].disabled = false;
+    }
+  }
+
+  for (var s = 0; s < allSelects.length; s++) {
+    var opts = allSelects[s].options;
+
+    for (var o = 0; o < opts.length; o++) {
+
+      if (usedValues.indexOf(opts[o].value) > -1) {
+        opts[o].disabled = true;
+        
+      }
+
+    }
+  }
+}
+</script>
+
+</body>
+</html>

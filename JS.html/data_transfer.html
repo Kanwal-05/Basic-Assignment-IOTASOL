@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATA TRANSFER USING DROPDOWNS</title>
+  </head>
+  <style>
+    .maincontainer {
+      display: inline-flex;
+
+      align-items: center;
+      padding: 200px;
+      width: 100%;
+    }
+  </style>
+  <body>
+    <div class="maincontainer">
+      <select name="list-1" id="list1" style="margin-right: 20px">
+        <option value="">LIST 1</option>
+        <option value="Element 1">Element 1</option>
+        <option value="Element 2">Element 2</option>
+        <option value="Element 3">Element 3</option>
+        <option value="Element 4">Element 4</option>
+        <option value="Element 5">Element 5</option>
+        <option value="Element 6">Element 6</option>
+      </select>
+      <br />
+
+      <select name="list-2" id="list2">
+        <option value="">LIST 2</option>
+      </select>
+    </div>
+    <div
+      class="btn"
+      style="
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        gap: 20px;
+      "
+    >
+      <button onclick="moveoneleft()">Move One Left</button>
+      <button onclick="moveoneright()">Move One Right</button>
+      <button onclick="moveallleft()">Move All Left</button>
+      <button onclick="moveallright()">Move All Right</button>
+    </div>
+
+    <script>
+      const list1 = document.getElementById("list1");
+      const list2 = document.getElementById("list2");
+
+      function moveoneright() {
+        if (list1.selectedIndex > 0) {
+          list2.appendChild(list1.options[list1.selectedIndex]);
+        }
+      }
+
+      function moveoneleft() {
+        if (list2.selectedIndex > 0) {
+          list1.appendChild(list2.options[list2.selectedIndex]);
+        }
+      }
+
+      function moveallright() {
+        for (let i = list1.options.length - 1; i > 0; i--) {
+          list2.appendChild(list1.options[i]);
+        }
+      }
+
+      function moveallleft() {
+        for (let i = list2.options.length - 1; i > 0; i--) {
+          list1.appendChild(list2.options[i]);
+        }
+      }
+    </script>
+  </body>
+</html>

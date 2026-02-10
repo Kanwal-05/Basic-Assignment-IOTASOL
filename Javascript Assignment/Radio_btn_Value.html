@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Button Value Reading</title>
+  </head>
+  <body>
+    <h1>Reading The Value Of Radio Button</h1>
+    
+    <label>Gender: </label>
+    <input type="radio" name="gender" value="Male"/>Male
+    <input type="radio" name="gender" value="Female"/>Female
+    <input type="radio" name="gender" value="Other"/>Other
+
+    <br />
+    <button onclick="submit()" style="margin-top: 30px;">Submit</button>
+    <hr>
+    <div id="result" style="color: brown;"></div>
+
+    <script>
+        function submit() {
+            let radios = document.getElementsByName('gender');
+            let resultDiv = document.getElementById('result');
+            
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    resultDiv.textContent = 'Gender is: ' + radios[i].value + '!';
+                    return; 
+                }
+            }
+            resultDiv.textContent = 'No gender selected!';
+        }
+    </script>
+  </body>
+</html>  
+
+
+
+

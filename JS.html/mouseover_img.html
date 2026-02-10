@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mouseover Images</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        background-color: beige;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      img:hover {
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="../Media/pic1.jpg" width="300" onmouseout="changeImage()" />
+
+    <script>
+      const images = [
+        "../Media/pic2.jpg",
+        "../Media/pic3.jpg",
+        "../Media/pic4.jpg",
+        "../Media/pic5.jpg",
+        "../Media/pic6.jpg",
+        "../Media/pic7.jpg",
+        "../Media/pic8.jpg",
+        "../Media/pic9.jpg",
+        "../Media/pic1.jpg",
+      ];
+
+      let index = 0;
+      const image = document.getElementsByTagName("img")[0];
+
+      function changeImage() {
+        index = (index + 1) % images.length;
+        image.src = images[index];
+      }
+    </script>
+  </body>
+</html>

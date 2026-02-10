@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide & Show Box</title>
+</head>
+<body>
+<div class="button" style="display: flex; justify-content: center; align-items: center; margin: 20px;">
+  <button onclick="togglethediv()" >HIDE / SHOW</button>
+</div>
+<div id="mainbox" style="display: flex; justify-content: center; align-items: center; margin: 20px;">
+  <div id="hideandshow" style=" background-color: brown; width: 50%; min-height: 200px; ">
+    
+  </div>
+</div> 
+<script>
+  function togglethediv(){
+    var box=document.getElementById("hideandshow")
+    if (box.style.display === "none") {
+        box.style.display = "block";
+      } else {
+        box.style.display = "none";
+      }
+  }
+</script>
+</body>
+</html> 
+
+

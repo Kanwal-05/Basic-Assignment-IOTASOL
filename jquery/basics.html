@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+ <div id="box" style="padding: 20px; background-color: white;">GURKANWAL SINGH</div>
+ <div class="buttons" style="gap: 5px; padding: 20px; position:relative;">
+    <button  id="hide">HIDE</button>
+    <button  id="show">SHOW</button>
+ </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // $("#hide").click(function hide(){
+        //     $("#box").fadeOut()
+        // })
+        // $("#show").click(function show(){
+        //     $("#box").fadeIn()
+        // })
+        
+
+        $("#hide").click(function hide(){
+        $("#box").hide()
+        })
+        $("#show").click(function show(){
+        $("#box").show()
+        })
+
+        $("#box"). dblclick( function(){
+            console.log("you click the text two times")
+        })
+        $("#box").hover(
+            function () {
+            setTimeout(() => {
+            $("#box").css("background-color", "yellow");
+            });
+            },
+            function () {
+            $("#box").css("background-color", "white");
+            }
+            );
+
+    </script>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Useful Info Extracted From Image</title>
+  </head>
+  <style>
+    #image_txt {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #img {
+      position: relative;
+      z-index: 2; 
+    }
+
+    .txt {
+      position: absolute;
+      z-index: 1;
+      font-size: 60px;
+      color: black;
+    }
+  </style>
+  <body>
+    <div id="image_txt">
+      <img  id="img" src="../Media/swans.png" alt="Loading......" />
+      <h1 class="txt">HELLO IOTASOL</h1>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#img").mouseover(function(){
+            $("#img").animate({opacity:0});
+        })
+        
+        $("#img").mouseout(function(){
+            $("#img").animate({opacity:1});
+        })
+    </script>
+
+
+
+  </body>
+</html>

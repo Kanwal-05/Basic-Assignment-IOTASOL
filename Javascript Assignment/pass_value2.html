@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing Values from one to another without forms</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p id="displayName"></p>
+    <script>
+      window.onload = function() {
+        var name = localStorage.getItem('userName');
+        if (name) {
+          document.getElementById('displayName').textContent = 'Hello, ' + name + '!';
+        } else{
+            document.getElementById('displayName').textContent = "No Name Found in Local Storage"
+        }
+      };
+    </script>
+</body>
+</html>

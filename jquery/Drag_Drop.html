@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draggable and Droppable</title>
+  </head>
+  <style>
+    #dragbox {
+      width: 100%;
+      gap: 100px;
+      padding: 80px;
+    }
+    #drag1 {
+      background-color: lightseagreen;
+      border: 1px dashed black;
+      padding: 40px;
+      margin-right: 30px;
+      cursor: grab;
+    }
+    #drag2 {
+      background-color: lightseagreen;
+      border: 1px dashed black;
+      padding: 40px;
+      margin-right: 30px;
+      cursor: grab;
+    }
+    #dropbox {
+      width: 100%;
+      gap: 100px;
+      padding: 80px;
+    }
+    #drop1 {
+      background-color: rgb(162, 238, 235);
+      border: 1px dashed black;
+      margin-top: 40px;
+      padding: 80px;
+      margin-right: 30px;
+    }
+    #drop2 {
+      background-color: rgb(162, 238, 235);
+      border: 1px dashed black;
+      margin-top: 40px;
+      padding: 80px;
+      margin-right: 30px;
+    }
+  </style>
+  <body>
+    <div id="dragbox">
+      <span id="drag1" draggable="true">DRAG 1</span>
+      <span id="drag2" draggable="true">DRAG 2</span>
+    </div>
+
+    <div id="dropbox">
+      <span id="drop1" dropzone="true"></span>
+      <span id="drop2" dropzone="true"></span>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#drag1").draggable();
+
+        $("#drop1").droppable({
+          drop: function (event, ui) {
+            $(this).append(ui.draggable);
+            ui.draggable.css({
+              top: 0,
+              left: 0,
+              'background-color': 'rgb(162, 238, 235)'
+            });
+          },
+        });
+      });
+
+      $(function () {
+        $("#drag2").draggable();
+
+        $("#drop2").droppable({
+          drop: function (event, ui) {
+            $(this).append(ui.draggable);
+            ui.draggable.css({
+              top: 0,
+              left: 0,
+              'background-color': 'rgb(162, 238, 235)'
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
